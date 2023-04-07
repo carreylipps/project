@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "CMPS 415 Project",
   "main": "testmongo.js",
-  "repository": "https://github.com/carreylipps/mongorender",
+  "repository": "https://github.com/carreylipps/project",
   "author": "CL",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node testmongo.js"
+    "start": "node 415project.js"
   },
   "dependencies": {
     "express": "^4.18.2",
