@@ -2,7 +2,7 @@
   "name": "Project",
   "version": "1.0.0",
   "description": "CMPS 415 Project",
-  "main": "testmongo.js",
+  "main": "415project.js",
   "repository": "https://github.com/carreylipps/project",
   "author": "CL",
   "license": "MIT",
