@@ -23,3 +23,6 @@ const ticket = tickets.getTicketById(req.params.id);
   }
 });
 
+app.listen(port, () => {
+  console.log('Server is listening at http://localhost:3000');
+});
