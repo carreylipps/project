@@ -22,7 +22,3 @@ const ticket = tickets.getTicketById(req.params.id);
       error: 'Not found' });
   }
 });
-
-app.listen(port, () => {
-  console.log('Server is listening at http://localhost:3000');
-});
