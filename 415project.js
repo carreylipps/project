@@ -12,6 +12,41 @@ console.log('Server started at http://localhost:' + port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//created tickets
+tickets = [
+    {
+        "id": 56738,
+        "created_at": "2023-04-07T19:46:46Z",
+        "updated_at": "2023-04-07T20:30:43Z",
+        "type": "ticket",
+        "subject": "Phase 1 test",
+        "description": "Phase 1 CMPS415 project",
+        "priority": "high",
+        "status": "open",
+        "recipient": "you@selu.edu",
+        "submitter": "carrey.lipps@selu.edu",
+        "assignee_id": 43521,
+        "follower_ids": [76538, 876],
+        "tags": ["winner", "tickets"],
+       },
+       {
+        "id": 2314,
+        "created_at": "2023-04-07T19:13:34Z",
+        "updated_at": "2023-04-07T20:45:13Z",
+        "type": "ticket",
+        "subject": "phase 1",
+        "description": "Phase 1 tester for cmps415 project",
+        "priority": "high",
+        "status": "open",
+        "recipient": "you@selu.edu",
+        "submitter": "carrey.lipps@selu.edu",
+        "assignee_id": 12345,
+        "follower_ids": [987654, 852],
+        "tags": ["lg", "tickets"],
+       }
+];
+
+
 // routes will go here
 
 // get all tickets
