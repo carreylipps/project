@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes will go here
 
-// Route to access database:
-app.get('/rest/ticket:id', function(req, res) {
+// get ticket
+app.get('/rest/ticket/id', function(req, res) {
 const ticket = tickets.getTicketById(req.params.id);
   if (ticket) {
     res.json(ticket);
@@ -23,7 +23,7 @@ const ticket = tickets.getTicketById(req.params.id);
   }
 });
 
-//get ticket
+//create ticket
 app.post('/rest/ticket', function (req, res)   {
     ticket =   {
         id: req.body.id,
