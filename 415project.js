@@ -13,13 +13,21 @@ app.use(express.urlencoded({ extended: true }));
 // routes will go here
 
 // get ticket
+
 app.get('/rest/list', function(req, res) {
 
     res.status(200).send(JSON.stringify(tickets));
 });
 
+//find a single ticket
+
+app.get('/rest/ticket/id'. function(req,res){
+        const search= "{id: '" + req.params.id + "'}";
+        console.log("Looking for " + search);
+});
 
 //create ticket
+
 app.post('/rest/ticket', function (req, res)   {
     ticket =   {
         id: req.body.id,
