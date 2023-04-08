@@ -54,7 +54,7 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+run(req,res).catch(console.dir);
 });
 
 app.post("/rest/ticket/", function(req,res){
@@ -73,7 +73,7 @@ app.post("/rest/ticket/", function(req,res){
       await client.close();
     }
   }
-  run().catch(console.dir);
+  run(req,res).catch(console.dir);
 });
 
 app.get('/rest/list/', function(req, res) {
