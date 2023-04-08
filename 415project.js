@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // get ticket
 
-app.get('/rest/list', function(req, res)) {
+app.get('/rest/list', function(req, res) {
 
     res.status(200).send(JSON.stringify(tickets));
-};
+});
 
 //find a single ticket
 
