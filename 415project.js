@@ -13,15 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 // routes will go here
 
 // get ticket
-app.get('/rest/ticket/id', function(req, res) {
-const ticket = tickets.getTicketById(req.params.id);
-  if (ticket) {
-    res.json(ticket);
-  } else {
-    res.status(404).json({
-      error: 'Not found' });
-  }
+app.get('/rest/list', function(req, res) {
+
+    res.status(200).send(JSON.stringify(tickets));
 });
+
 
 //create ticket
 app.post('/rest/ticket', function (req, res)   {
