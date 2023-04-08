@@ -15,3 +15,4 @@ const tickets = [
   "tags": ["winner", "tickets"]
 }
   ]
+module.exports = tickets;
