@@ -2,13 +2,13 @@
   "name": "Project",
   "version": "1.0.0",
   "description": "CMPS 415 Project",
-  "main": "415project.js",
+  "main": "projecttest.js",
   "repository": "https://github.com/carreylipps/project",
   "author": "CL",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node 415project.js"
+    "start": "node projecttest.js"
   },
   "dependencies": {
     "express": "^4.18.2",
