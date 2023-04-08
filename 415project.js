@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes will go here
 
-// get ticket
+// get all tickets
 
 app.get('/rest/list', function(req, res) {
 
