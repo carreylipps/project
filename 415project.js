@@ -1,4 +1,6 @@
+const {mongoclient} = require('mongodb')
 
+const uri = 'mongodb+srv://carrey:Beauxbella13@clmdb.xd8c4zo.mongodb.net/?retryWrites=true&w=majority'
 // --- This is the standard stuff to get it to work on the browser
 const express = require('express');
 const ticket = require('./tickets');
