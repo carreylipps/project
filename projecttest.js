@@ -52,9 +52,8 @@ async function run() {
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
-  }
+  
 }
-run(req,res).catch(console.dir);
 });
 
 app.post("/rest/ticket/", function(req,res){
