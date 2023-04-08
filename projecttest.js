@@ -8,6 +8,7 @@ const uri = "mongodb+srv://carrey:beauxbella@clmdb.xd8c4zo.mongodb.net/?retryWri
 const express = require('express');
 const app = express();
 const port = 3000;
+const tickets = ('./tickets');
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
 
