@@ -22,3 +22,24 @@ const ticket = tickets.getTicketById(req.params.id);
       error: 'Not found' });
   }
 });
+
+//get ticket
+app.post('/rest/ticket', function (req, res)   {
+    ticket =   {
+        id: req.body.id,
+        createdat: req.body.createdat,
+        updatedat: req.body.updatedat,
+        type: req.body.type,
+        subject: req.body.subject,
+        description: req.body.description,
+        priority: req.body.priority,
+        status: req.body.status,
+        recipient: req.body.recipient,
+        submitter: req.body.submitter,
+        assignee_id: req.body.assignee_id,
+        follower_id: req.body.follower_id,
+        tags: req.body.tags
+    };
+    tickets.push(ticket);
+    res.status(200).send(JSON.stringify(ticket));
+});
