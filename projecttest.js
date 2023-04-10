@@ -99,9 +99,5 @@ app.get('/rest/list/', function(req, res) {
       console.log(err);
       res.send(err.message).status(500);
     } finally {
-      await client.close();
+      await client.close;
     }
-  }
-
-  run().
-
