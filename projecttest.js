@@ -64,8 +64,9 @@ app.get('/rest/list/', function(req, res) {
   console.log("looking for every ticket");
   
   async function run() {
+    const client = new MongoClient(uri);
     try {
-      const client = new MongoClient(uri);
+      await client = new MongoClient(uri);
       const database = client.db('clmdb');
       const ticket = database.collection('ticket');
       
@@ -76,6 +77,6 @@ app.get('/rest/list/', function(req, res) {
     finally {  await client.close();
             }
   }
-  run.catch(console.dir);
+  run().catch(console.dir);
 });
  
