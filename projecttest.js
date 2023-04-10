@@ -42,19 +42,26 @@ async function run() {
 }
 };
 
-app.post("/rest/ticket/", function(req,res){
+app.post("/rest/ticket/", async function(req,res){
   console.log("Adding ticket ");
+  
+  const client = new MongoClient(uri);
   
   async function run() {
     try{
-      const client = new MongoClient(uri);
+      await client.connect();
       const database = client.db("clmdb");
       const ticket = database.collection("ticket");
+      
       let newDocument = req.body;
-      newDocument.id = new Id("574628");
+      newDocument.id = new ObjectId();
+      
       let result = await ticket.insertOne(newDocument);
-      res.send(result).status(204);
-    }finally{
+      res.status(204).send(result);
+    } catch(error){
+    console.error(error);
+      res.status(500).send(error.message);
+    finally{
       await client.close();
     }
   }
