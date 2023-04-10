@@ -40,7 +40,7 @@ async function run() {
     // Ensures that the client will close when you finish/error
     await client.close();
 }
-});
+};
 
 app.post("/rest/ticket/", function(req,res){
   console.log("Adding ticket ");
