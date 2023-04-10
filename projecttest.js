@@ -74,7 +74,6 @@ app.get('/rest/list/', function(req, res) {
   async function run() {
     const client = new MongoClient(uri);
     try {
-      await client = new MongoClient(uri);
       const database = client.db('clmdb');
       const ticket = database.collection('ticket');
       
