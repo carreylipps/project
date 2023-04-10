@@ -78,5 +78,4 @@ app.get('/rest/list/', function(req, res) {
   }
   run.catch(console.dir);
 });
-}  
  
