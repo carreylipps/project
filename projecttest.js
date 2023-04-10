@@ -20,27 +20,27 @@ app.get('/', function(req, res) {
 app.get('/say/:name', function(req, res) {
   res.send('Hello ' + req.params.name + '!');
 });
-// Route to access database:
-app.get('/rest/ticket/id', function(req, res) {
-const client = new MongoClient(uri);
-const searchKey = "{ ticketID: '" + req.params.item + "' }";
-console.log("Looking for: " + searchKey);
-async function run() {
+
+app.get('/rest/ticket/:item', async function(req, res) {
+  const client = new MongoClient(uri);
+  const searchKey = "{ ticketID: '" + req.params.item + "' }";
+  console.log("Looking for: " + searchKey);
+
   try {
+    await client.connect();
     const database = client.db('clmdb');
     const tickets = database.collection('ticket');
-    // Hardwired Query for a part that has partID '12345'
-    //const query = { partID: '12345' };
-    // But we will use the parameter provided with the route
+
     const query = { ticketID: req.params.item };
     const ticket = await tickets.findOne(query);
     console.log(ticket);
     res.send('Found this: ' + JSON.stringify(ticket));  //Use stringify to print a json
+  } catch (err) {
+    console.log(err.stack);
   } finally {
-    // Ensures that the client will close when you finish/error
     await client.close();
-}
-};
+  }
+});
 
 app.post("/rest/ticket/", async function(req,res){
   console.log("Adding ticket ");
