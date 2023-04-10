@@ -40,7 +40,7 @@ async function run() {
     // Ensures that the client will close when you finish/error
     await client.close();
 }
-};
+});
 
 app.post("/rest/ticket/", function(req,res){
   console.log("Adding ticket ");
@@ -59,7 +59,7 @@ app.post("/rest/ticket/", function(req,res){
     }
   }
   run(req,res).catch(console.dir);
-};
+});
 app.get('/rest/list/', function(req, res) {
   console.log("looking for every ticket");
   
@@ -77,4 +77,6 @@ app.get('/rest/list/', function(req, res) {
             }
   }
   run.catch(console.dir);
-};
+});
+}  
+ 
